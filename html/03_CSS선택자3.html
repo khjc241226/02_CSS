@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_CSS 선택자 3</title>
+  
+  <!-- 외부 css 파일 연결 -->
+  <link rel="stylesheet" href="../css/03_CSS선택자3.css">
+</head>
+<body>
+
+  <h1>일반 구조 선택자(위치 기준)</h1>
+
+  <pre>
+    - 형제 관계에 있는 요소 중 특정 요소만 선택하는 선택자
+
+    **** 중요 ****
+    위치를 기준으로 구분!!!
+
+    [작성법]
+    
+    (A : 선택된 요소)
+    A:first-child  -> 형제들 중 A가 첫 번째로 위치한 요소가 맞을 경우 선택
+
+    A:last-child   -> 형제들 중 A가 마지막에 위치한 요소가 맞을 경우 선택
+
+    A:nth-child(숫자 또는 수열) 
+      -> 형제들 중 A가 n번째에 위치한 요소가 맞을 경우 선택
+
+    A:nth-last-child(숫자 또는 수열) 
+      -> 형제들 중 A가 뒤에서 n번째에 위치한 요소가 맞을 경우 선택
+  </pre>
+
+  <div id="test1">
+
+    <!-- 첫 번째 자식이 p태그가 아니라서 
+      #test1 > p:first-child 가 적용되지 않음!!
+    -->
+    <!-- <pre>테스트0</pre> -->
+
+    <p>테스트1</p>
+    <p>테스트2</p>
+    <p>테스트3</p>
+    <p>테스트4</p>
+    <p>테스트5</p>
+
+    <!-- <pre>테스트6</pre> -->
+  </div>
+
+
+  <hr>
+  <h1>형태 구조 선택자</h1>
+  <pre>
+    - 선택된 형제 관계 요소 중 특정 요소를 선택하는 선택자
+    (선택된 요소들을 기준으로 선택)
+    
+    [작성법]
+    :first-of-type : 선택된 형제 요소 중 첫 번째 선택
+    :last-of-type  : 선택된 형제 요소 중 마지막 선택
+    :nth-of-type(숫자 또는 수열) : 선택된 형제 요소 중 n번째 선택
+    :nth-last-of-type(숫자 또는 수열) : 선택된 형제 요소 중 뒤에서 n번째 선택
+  </pre>
+
+  <div id="test2">
+    <pre>테스트0 (pre)</pre>
+    <p>테스트1</p>
+    <p>테스트2</p>
+    <p>테스트3</p>
+    <p>테스트4</p>
+    <p>테스트5</p>
+    <pre>테스트6 (pre)</pre>
+  </div>
+  
+
+  <hr>
+  <h1>부정 선택자(:not)</h1>
+  <pre>
+    - 선택된 요소를 제외한 나머지를 선택
+
+    [작성법]
+    A:not(B)
+    -> 선택된 A들 중에서 B를 뺀 나머지만 선택
+  </pre>
+
+  <ul id="test3">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+    <li>item5</li>
+    <li>item6</li>
+    <li>item7</li>
+    <li>item8</li>
+    <li>item9</li>
+    <li>item10</li>
+  </ul>
+  
+</body>
+</html>

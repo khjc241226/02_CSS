@@ -1,0 +1,81 @@
+/* :only-child */
+
+/* #test1 요소의 유일한 자식이 p태그인 경우 선택 */
+#test1 > p:only-child{
+  background-color: orange;
+}
+
+
+/* :only-of-type */
+
+/* #test2인 요소의 자식 중 p태그가 1개만 있을 경우 선택 */
+#test2 > p:only-of-type{
+  background-color: pink;
+}
+
+#test2 > pre:only-of-type{
+  background-color: yellow;
+}
+
+
+/* :empty */
+
+/* #test3 내에 아무것도 작성되지 않은 경우 */
+#test3:empty{
+  width: 100px;
+  height: 100px;
+  background-color: lightgreen;
+}
+
+
+
+/* 여러 선택자 동시 작성(, 구분) */
+#test4a, 
+.test4b,
+[name="test4c"]{
+  font-size: 24px;
+  font-family: '돋움';
+  text-decoration: underline;
+}
+
+
+/* 여러 클래스가 작성된 요소 선택하기 */
+.test6{
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+/* 쭉 이어서 작성!!, 
+  띄어쓰기 == 후손 선택자  --> 띄어쓰기 조심! */
+.test6.aaa{
+  background-color: yellow;
+}
+
+/* .test6.aaa.bbb */
+.test6.bbb{
+  font-size: 30px;
+  color: red;
+  font-weight: bold;
+}
+
+
+/* 다른 태그, 같은 클래스 요소 구분하기 */
+.test7{
+  width: 100px;
+  height: 50px;
+  border: 3px solid gray;
+
+  /* 다른 요소와 간격 아래 방향 간격 5px */
+  margin-bottom: 5px; 
+}
+
+/* 딱 붙여서 작성!!! */
+/* div 태그 중 class가 test7인 요소 선택 */
+div.test7{
+  background-color: red;
+}
+
+section.test7{
+  background-color: blue;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05_CSS 선택자 5</title>
+
+  <link rel="stylesheet" href="../css/05_CSS선택자5.css">
+</head>
+<body>
+  
+  <h3>:only-child</h3>
+  <pre>
+    선택된 요소의 자식이 하나만 있을 때 선택
+  </pre>
+
+  <div id="test1">
+    <p>자식1</p>
+    <!-- <pre>자식 2(pre)</pre> -->
+  </div>
+
+
+  <hr>
+  <h3>:only-of-type</h3>
+  <pre>
+    특정 요소의 자식 중
+    지정된 요소가 하나만 존재할 때 선택
+  </pre>
+
+  <div id="test2">
+    <p>자식1</p>
+    <pre>자식2(pre)</pre>
+  </div>
+
+
+  <hr>
+  <h3>:empty</h3>
+
+  <pre>
+    - 선택된 요소 내부에 아무런 노드(Node)도
+      존재하지 않을 경우 선택된
+
+    * 노드(Node)
+     - HTML 문서에 작성되는 모든 것들
+     ex) 태그, 글자, 띄어쓰기, 엔터 등... (주석 가능)
+  </pre>
+
+  <div id="test3"><!-- 주석 --></div>
+
+
+  <hr>
+  <h1>여러 선택자를 동시에 지정하는 방법</h1>
+  
+  <pre>
+    - 같은 스타일(css)을 적용하고 싶은 요소가 있으나
+      하나의 선택자로 모두 선택할 수 없을 경우 사용
+
+    [작성법]
+    선택자A, 선택자B, 선택자C, ... { css 코드; }
+  </pre>
+
+  <div id="test4a">테스트4a</div>
+  <p class="test4b">테스트4b</p>
+  <pre name="test4c">테스트4c</pre>
+
+
+  <hr>
+  <h1>여러 클래스가 작성된 요소만 선택하기</h1>
+
+  <div class="test6">테스트</div>
+  <div class="test6 aaa">테스트</div>
+  <div class="test6 aaa bbb">테스트</div>
+  <div class="aaa bbb">테스트</div>
+
+
+  <hr>
+  <h1>다른 태그, 같은 클래스 요소 구분하기</h1>
+
+  <div class="test7">테스트</div>
+  <section class="test7">테스트</section>
+
+
+
+</body>
+</html>

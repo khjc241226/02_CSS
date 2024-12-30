@@ -1,0 +1,221 @@
+/* .css 파일 == <style> 태그 내부 */
+
+strong{
+  color : steelblue;
+  font-size: 18px;
+  text-decoration: underline;
+  font-family: '맑은고딕';
+}
+
+code{
+  background-color: #F5E7B2;
+  display: block; /* 요소의 형식을 block 형식(행 분할)으로 변경 */
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* 기본 속성 선택자 1 - 속성명 */
+[name]{ background-color: rgb(190, 246, 173);}
+
+/* 기복 속성 선택자 2 - 속성명=속성값 */
+[name=bbb]{ font-size: 20px; }
+[name="bbb"]{ text-decoration: underline;}
+
+
+/* 자식 선택자 ( A > B ) */
+
+/* class 속성 값이 "parent-1"인 요소의 자식 중 
+   li태그를 모두 선택 */
+.parent-1 > li{
+  font-size: 24px;
+}
+
+/* class 속성 값이 "parent-1"인 요소의 자식 중 
+   class 속성 값이 "child-1"인 모든 요소 선택 */
+.parent-1 > .child-1{
+  background-color: yellow;
+}
+
+/* 자식 선택자를 여러 번 작성하는 경우 */
+.parent-1 > li > span{
+  background-color: red;
+}
+
+
+
+/* 후손 선택자 (A B) */
+
+/* class가 parent-2인 요소 하위 모든 p태그 선택 */
+.parent-2 p{ background-color: lightcoral; }
+
+
+/* class가 parent-2인 요소 하위 모두 선택 */
+.parent-2 *{
+  font-family:  '궁서체';
+}
+
+
+
+/* 반응 선택자 */
+
+.test-btn{
+  width: 300px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer; /* 마우스 포인터 모양을 손가락으로 변경 */
+  background-color: white;
+  color : deeppink;
+  border : 2px solid deeppink; /* 테두리 스타일 지정 */
+}
+
+/* :hover 반응 선택자 */
+.test-btn:hover{
+  background-color: deeppink;
+  color: white;
+}
+
+/* :active 반응 선택자 */
+.test-btn:active{
+  transform: scale(0.9); /* 크기를 90%로 변환 */
+}
+
+
+/* :focus 상태 선택자 */
+.input-1:focus{
+  background-color: lightgreen;
+}
+
+/* :checked 상태 선택자 */
+
+/* input 요소 중 name이 radioGroup 이면서 체크된 요소만 선택 */
+input[name="radioGroup"]:checked{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  color: red;
+  /* 체크 시 보여지는 표시는 이미지 -> 색상 적용 X */
+  /* 최근에 변경 CSS 추가됨!!! */
+}
+
+/* 체크된 체크박스만 선택 */
+input[name=checkGroup]:checked{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  color: red;
+}
+
+/* :enabled / :disabled 상태 선택자 */
+.input-3:enabled{ background-color: yellowgreen; }
+
+.input-3:disabled{ background-color: salmon;}
+
+
+
+/* 동위 선택자 */
+
+/* A + B : A 바로 뒤에 B 형제 요소 1개 선택 */
+
+#div1 + div{ /* id가 "div1"인 요소 바로 뒤 div 요소 선택 */
+  background-color: #AF47D2;
+}
+
+#div4 + p{
+  background-color: #cccccc;
+}
+
+/* A ~ B : A 다음에 존재 하는 모든 B 형제 요소 선택 */
+#div3 ~ div{
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#div1 ~ div{
+  color : red;
+}
+
+
+
+/* radio 버튼 꾸미기 */
+input[name=radioDeco]{
+  /* 브라우저 기본 스타일 제거 */
+  appearance: none; 
+
+  width: 20px;
+  height: 20px;
+
+  /* 테두리 2px 실선 #cccccc 색상 적용 */
+  border: 2px solid #cccccc; 
+
+  /* 모서리 곡률 지정 */
+  border-radius: 50%;
+
+  background-color: white;
+
+  /* 마우스 손가락 모양 */
+  cursor: pointer;
+}
+
+/* 체크된 경우 */
+input[name=radioDeco]:checked{
+  background-color: orange;
+  border-color : orange;
+}
+
+
+/* checkbox 버튼 꾸미기 */
+input[name="checkDeco"]{
+  appearance: none; /* 브라우저 기본 스타일 제거 */
+  width: 20px;
+  height: 20px;
+  border : 2px solid #cccccc;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 3px; /* 모서리 둥굴게 */
+}
+
+/* 체크된 경우 */
+input[name="checkDeco"]:checked{
+  background-color: green;
+  border-color : green;
+  position: relative; /* 위치 기준 */
+}
+
+/* 체크된 요소에 ✔ ✓ √ 모양 추가 */
+/* :before : 선택된 요소 앞에 추가 */
+input[name="checkDeco"]:checked:before{
+  content: '✔';
+  position: absolute; /* 기준 내에 절대적 위치 배치 */
+  left: 2px; /* 왼쪽 테두리에서 2px 밀려남 */
+  bottom: -2px; /* 아랫쪽 테두리에서 -2px 밀려남  */
+  font-size: 16px;
+  color: white;
+}
+
+
+/* 이미지를 이용해서 checkbox 꾸미기 */
+
+/* 감싸고 있는 label */
+.check-test{
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cccccc;
+  display: inline-block; /* inline-block으로 변경 */
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* 자식 체크박스 선택 */
+.check-test > input[type="checkbox"]{
+  display: none; /* 화면에서 숨김 */
+}
+
+/* 체크된 체크박스 다음에 존재하는 div 선택 */
+.check-test > input[type="checkbox"]:checked + div{
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/checkbox.png');
+  background-size: cover; /* 배경 크기 맞추기 */
+}

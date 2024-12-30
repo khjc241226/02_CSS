@@ -1,0 +1,28 @@
+/* ~= : 여러 속성 값 중 하나라도 일치하면 선택(포함) */
+div[name ~= "aaa"]{
+  background-color: greenyellow;
+}
+
+/* |= : "-"(하이픈) 기호 앞쪽 문자열이 일치하면 선택 */
+div[name |= "str"]{
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+/* ^(캐럿) : 특정 단어로 시작하면 선택 */
+div[class ^= "class"]{
+  font-style: italic;
+  font-size: 28px;
+}
+
+/* $ : 특정 단어로 끝나면 선택 */
+div[class $= "2"]{
+  text-decoration: underline; /* 밑줄 */
+}
+
+/* * : 특정 값을 포함하면 선택 */
+div[name *= "2"]{
+  border: 5px solid blue;
+}

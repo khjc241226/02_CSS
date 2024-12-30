@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06_선택자 우선순위</title>
+  <link rel="stylesheet" href="../css/06_선택자우선순위.css">
+</head>
+<body>
+  <h1>CSS 선택자 우선 순위</h1>
+  <pre>
+    - CSS는 기본적으로 style 태그 또는 .css 파일에
+      작성된 순서대로 해석이 진행 되지만
+      (왼쪽 -> 오른쪽,  위 -> 아래)
+
+      같은 요소에 여러 css 속성이 설정되는 경우
+      위치, 선택자에 따라서 우선 순위가 결정된다.
+
+    <strong style="color:red;">
+      [꼭 알고 있어야 하는 내용!]
+    </strong>
+
+    1) 동일한 우선 순위로 css 속성이 설정된 경우
+     -> 제일 "마지막"에 작성된 CSS 속성이 반영된다!
+        (마지막 내용으로 덮어쓰기 된다!)
+
+    2) 여러 선택자를 이용해서 하나의 요소에 
+       여러 css 속성을 적용해도
+       css 속성이 다르면 모두 반영 된다.
+      (곂치는게 없으니까 덮어쓰기 X)
+
+    <hr>
+    <hr>
+
+    (1순위 최우선!!)
+    1순위 : !important   
+
+    2순위 : inline-style (요소에 style 속성을 작성)
+    
+    3순위 : 아이디 선택자 (#아이디속성값)
+
+    4순위 : 클래스 선택자 (.클래스명)
+
+    5순위 : 태그 선택자  (태그명)
+  </pre>
+
+  <hr>
+
+  <div class="cls1" id="test1" 
+    style="background-color: yellowgreen;">
+    <!-- 2순위 : inline-style -->
+    
+    우선 순위 테스트
+  </div>
+
+</body>
+</html>

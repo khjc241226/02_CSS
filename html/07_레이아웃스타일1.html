@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07_레이아웃 스타일 1</title>
+  <link rel="stylesheet" href="../css/07_레이아웃스타일1.css">
+</head>
+<body>
+  <h1>화면 배치(표시, 형식) 지정 속성 : display</h1>
+
+  <pre>
+    요소가 화면에 어떻게 표시될지 형식을 지정하는 속성
+
+    - block : 화면/영역을 행으로 분할 (수직 분할)
+      1) 한 행을 요소 하나가 전부 차지함
+        -> 다음 요소는 다음 줄로 넘어감
+
+      2) 크기(width, height) 지정 O 
+
+
+    - inline : 화면/영역을 열로 분할 (수평 분할)
+      1) 한 행을 내용 크기 만큼 열로 분할
+
+      2) 크기(width, height) 지정 X
+
+
+
+    - inline-block : 화면/영역을 열로 분할(inline)
+                    + 크기 지정 O(block)
+
+    
+    - none : 화면에 표시 X
+      -> 화면에 안보일 뿐이지 실제로는 존재함!
+
+    
+    - flex : 요소가 정렬되는 방향
+            요소간의 간격을 유연하게 처리하여 표시
+            (브라우저가 간격, 크기를 계산해서 실시간으로 적용)
+            (1차원 직선 형태)
+
+    - grid : 격자 무늬 형식으로 화면을 쉽게 분할하는 형식
+            (2차원 평면 형태)
+  </pre>
+
+  <hr>
+
+  <h3>block 형식 요소를 inline 형식으로 변경</h3>
+
+  <!-- div.box.area${$번 영역}*5 -->
+  <div class="box area1 inline">1번 영역</div>
+  <div class="box area2 inline">2번 영역</div>
+  <div class="box area3 inline">3번 영역</div>
+  <div class="box area4 inline">4번 영역</div>
+  <div class="box area5 inline">5번 영역</div>
+
+  <hr>
+  <h3>inline 형식 요소를 block 형식으로 변경</h3>
+
+  <span class="box area1 block">1번 영역</span>
+  <span class="box area2 block">2번 영역</span>
+  <span class="box area3 block">3번 영역</span>
+  <span class="box area4 block">4번 영역</span>
+  <span class="box area5 block">5번 영역</span>
+
+
+  <hr>
+  <h3>inline-block으로 변경하기</h3>
+
+  <span class="box area1 inline-block">1번 영역</span>
+  <span class="box area2 inline-block">2번 영역</span>
+  <span class="box area3 inline-block">3번 영역</span>
+  <span class="box area4 inline-block">4번 영역</span>
+  <span class="box area5 inline-block">5번 영역</span>
+
+  
+  <hr>
+  <h3>display: none, visibility: hidden 비교</h3>
+
+  <span class="box area1 inline-block">1번 영역</span>
+  
+  <!-- display: none -> 요소는 존재하지만 화면에 표시되지 않음 -->
+  <span class="box area2 inline-block none">2번 영역</span>
+
+  <span class="box area3 inline-block">3번 영역</span>
+  
+  <!-- visibility: hidden  -> 투명하게 변함(자리는 계속 차지함) -->
+  <span class="box area4 inline-block hidden">4번 영역</span>
+
+
+  <span class="box area5 inline-block">5번 영역</span>
+
+
+</body>
+</html>
