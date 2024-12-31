@@ -46,3 +46,59 @@
 .margin-2{
   margin: 100px; /* 상하좌우 다른 요소와 100px 만큼 간격 설정 */
 }
+
+
+/* 방향 테스트 */
+.test1{
+  padding-top:    10px;
+  padding-right:  20px;
+  padding-bottom: 30px;
+  padding-left:   40px;
+
+  margin-top: 30px;
+  margin-right: 50px;
+  margin-bottom: 70px;
+  margin-left: 90px;
+
+  /* border-방향 : 크기 스타일 색상
+    스타일 : solid(실선), dotted(...), dashed(---), 
+             double(이중 실선), inset(음각), outset(양각)
+  */
+
+  border-top : 5px dotted red;
+  border-right: 10px dashed blue;
+  border-bottom: 7px double black;
+  border-left: 15px outset gray;
+}
+
+
+/* 크기 한 번에 지정 */
+.test2{
+  padding : 10px 20px 30px 40px;
+
+  margin : 50px 100px 150px 200px;
+
+  border-width: 20px 30px 40px 50px;
+}
+
+
+
+/* maring : auto 확인하기 */
+.container{
+  width: 400px;
+  height: 400px;
+  border: 3px solid black;
+}
+
+.test3{
+  margin : auto;
+
+  /* text-align
+    - 요소 내부에 작성된 글자(또는 inline 요소)를 정렬하는 속성
+  */
+  text-align: center;
+}
+
+.test3 > span{
+  margin: auto; /* inline 요소는 적용 X -> text-align 사용 */
+}
