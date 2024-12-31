@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09_레이아웃 스타일 3</title>
+  <link rel="stylesheet" href="../css/09_레이아웃스타일3.css">
+</head>
+<body id="top">
+
+  <!-- position : sticky -->
+  <h1 class="sticky">요소 배치(위치) 관련 스타일 : position</h1>
+
+  <pre>
+    position은 요소의 위치를 지정하는 속성
+
+    position : relative;
+     - 지정된 요소 내부에 다른 요소가
+       상대적인 위치를 가진을 수 있도록
+       기준이 되게 만드는 속성
+
+    postion : absolute;
+     - 요소의 배치 순서를 무시하고
+      지정된 절대적인 위치에 요소를 배치하는 속성
+
+     1) position : relative;가 설정되지 않은 요소 내부에 작성
+      -> 브라우저 화면에 지정된 위치에 요소가 배치
+
+     2) position : relative;가 설정된 요소 내부에 작성
+     -> 감싸는 요소 내 지정된 위치에 배치
+
+     * 원하는 위치 배치 시
+       top, bottom, left, right 속성을 이용함
+
+
+    position : fixed;
+     - 항상 고정된 위치에 요소를 배치함
+       (화면이 움직여도 계속 일정한 위치에 있음)
+
+    position : sticky;
+     - 해당 속성이 설정된 요소가
+      1) 화면에 보여지고 있으면 : 일반 요소
+      2) 화면을 벗어나면 : fixed 요소
+  </pre>
+
+  <hr>
+
+  <h3>position : relative + absolute 확인하기</h3>
+
+  <div class="container-1">
+    <div><!-- first --></div>
+    <div><!-- second --></div>
+    <div><!-- third --></div>
+  </div>
+
+  <hr>
+  <h3>z-index : 정수값</h3>
+
+  <pre>
+    position : absolute, fixed, sticky 상태 요소의
+    z 축 방향으로 올라오거나 내려가있는 정도는 지정하는 속성
+    (기본 값 0, 수치가 같으면 html에서 마지막에 작성된 요소가 제일 위)
+  </pre>
+
+  <div class="container-2">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+
+  <!-- fixed 요소 생성 -->
+  <div class="top-btn-container">
+    <a href="#top" class="top-btn">TOP</a>
+  </div>
+
+
+</body>
+</html>
