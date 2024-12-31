@@ -1,0 +1,69 @@
+.flex-container{
+  height: 400px;
+  margin: 30px;
+  display: flex;
+
+  /* flex-flow : flex-direction(중심축) + flex-wrap(한줄/여러줄)  */
+  flex-flow: row nowrap; /* 기본값 */
+}
+
+
+/* order : item 순서를 지정하는 속성 
+  숫자가 클 수록 중심축 끝에 배치
+*/
+.order1{ order : 1; }
+.order2{ order : 2; }
+.order3{ order : 3; }
+.order4{ order : 4; }
+.order5{ order : 5; }
+
+
+/* flex-grow : item 중심축 방향 팽창 정도 지정 */
+.grow1{ flex-grow: 1;}
+.grow2{ flex-grow: 2;}
+.grow3{ flex-grow: 3;}
+.grow4{ flex-grow: 4;}
+
+
+/* flex-shrink : 
+ item이 container를 중심축 방향으로 초과하는 경우
+ 줄어드는 비율을 설정하는 속성
+ */
+.shrink-container > .item{
+  width: 200px;
+  height: 200px;
+}
+
+.shrink0{ flex-shrink: 0;}
+.shrink1{ flex-shrink: 1;}
+.shrink2{ flex-shrink: 2;}
+.shrink3{ flex-shrink: 3;}
+
+
+/* flex-basis : 중심축 방향으로 item 크기를 설정하는 속성 */
+.fb-150px { flex-basis: 150px;}
+.fb-10{ flex-basis: 10%; }
+.fb-25{ flex-basis: 25%; }
+.fb-50{ flex-basis: 50%; }
+
+.basis-container{
+  height: 1200px;
+  flex-direction: column;
+  /* 중심축 column == 세로, felx-basis == 높이(height) */
+  /* 중심축 row    == 가로, felx-basis == 너비(width)  */
+}
+
+
+
+/* flex 속성 : flex-grow + flex-shirink + flex-basis */
+.flex-gsb > .item{
+  flex : 0 1 200px;
+}
+
+
+/* align-self : 
+  각 item 별로 교차축 방향 정렬 */
+
+.self-start { align-self: flex-start;}
+.self-end   { align-self: flex-end;}
+.self-center{ align-self: center;}
