@@ -7,6 +7,76 @@
   <link rel="stylesheet" href="../css/08_레이아웃스타일2.css">
 </head>
 <body>
-  
+  <h1>요소의 영역(여백) 관련 스타일</h1>
+
+  <pre>
+    HTML 요소는 총 4가지의 영역으로 구성되어 있음
+
+    1. content(내용) 
+     - 요소의 내용이 작성 되어지는 영역
+     (시작 태그와 종료 태그 사이에 작성되는 
+      내용, 값, 이미지를 생각하면됨)
+
+    2. padding
+     - content와 border 사이 공간
+
+    3. border(테두리)
+     - 요소의 테두리가 지정되는 영역
+     - content보다 바깥쪽에서 감싸고 있는 형태
+
+    4. margin(여백, 간격)
+     - 다른 요소와의 간격을 나타내는 영역
+
+    <hr>
+
+    <h3>box-sizing</h3>
+
+    - width/height 크기 설정 시
+      크기가 적용될 범위를 지정하는 속성
+
+    1. content-box (기본값)
+     - width/height 설정 시
+       content 영역의 크기만 설정
+
+    2. border-box
+     - width/height 설정 시
+      설정 된 값이 content + padding + border 크기를 
+      합산한 결과가 되도록
+      content 영역의 크기를 자동으로 조정
+  </pre>
+
+  <hr>
+
+  <h3>기준</h3>
+  <div class="box">content</div>
+
+  <hr>
+  <h3>border(테두리) 영역</h3>
+  <div class="box border">content</div>
+
+  <hr>
+  <h3>content(내용) 영역</h3>
+  <div class="box border content">content</div>
+
+
+  <hr>
+  <h3>padding(채우기) 영역</h3>
+  <div class="box border padding">content</div>
+
+  <hr>
+  <h3>margin(여백, 간격) 영역</h3>
+
+  <pre>
+    margin 영역은 다른 요소와 겹칠 수 있다!!
+    -> 겹치는 방향의 margin 값이 더 큰 요소의 margin만 적용
+  </pre>
+  <!-- 
+    id, name : 카멜(aaaBbb) 표기법 사용
+    class 등 나머지: 하이픈(-) 표기법 사용 
+  -->
+  <div class="box border margin-1">content</div>
+  <div class="box border margin-2">content</div>
+
+
 </body>
 </html>
