@@ -1,0 +1,98 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+div, header, main, footer, section{
+  border: 1px solid black;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+
+  /* 최소 높이 : 화면 높이의 100% 
+    -> 내부 요소가 화면 높이 100%를 초과하면  
+       스크롤이 생성되며 늘어남
+    
+    -> 내부 요소가 화면 높이 100% 미만이면
+       body 태그가 화면 높이 100%로 height 유지
+  */
+  min-height: 100vh;
+}
+
+
+header{
+  height:  300px;
+  flex-grow: 0; /* 기본값 */
+}
+
+main{
+  flex-grow: 1; /* 너만 팽창해~ */
+}
+
+footer{
+  height: 400px;
+  flex-grow: 0; /* 기본값 */
+}
+
+
+/* header 영역 분할 */
+header{
+  display: flex;
+}
+
+.header-1, .header-3{
+  width: 300px;
+  flex-grow: 0;
+}
+
+.header-2{
+  /* 중심축 방향 팽창 비율 지정 */
+  flex-grow: 1;
+}
+
+header > section{
+  font-size: 64px;
+  font-weight: bold;
+
+  /* flex-container로 지정 */
+  display: flex;
+
+  /* 중심축 방향 가운데 정렬 */
+  justify-content: center;
+  
+  /* 교차축 방향 가운데 정렬 */
+  align-items: center;
+}
+
+
+/* main 영역 분할 */
+main{
+  display: flex;
+  flex-direction: row; /* 기본 값 */
+  align-items: stretch; /* 기본 값 */
+}
+
+main > section{
+  width: 50%;
+}
+
+
+/* main 오른쪽 영역 분할 */
+.content-2{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.content-2 > div:first-child{
+  height: 40%; /* 부모 높이의 40% */
+  flex-grow: 0;
+}
+
+.content-2 > div:last-child{
+  /* height: 60%; */
+  flex-grow: 1; /* 나머지 영역 모두 차지 */
+}

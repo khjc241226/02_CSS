@@ -1,0 +1,146 @@
+*{
+  box-sizing: border-box;
+  margin: 0; /* 다른 요소와의 간격 */
+  padding: 0; /* content, border 사이 간격 */
+}
+
+div{
+  border: 1px solid black;
+}
+
+h1, h3{
+  margin: 10px 0; /* 상하 / 좌우 */
+  text-decoration: underline;
+}
+
+
+
+/* 상하 2분할 */
+.container-1{
+  width: 500px;
+  height: 600px;
+  margin: 20px;
+}
+
+.container-1 > div{
+  width: 100%; /* 부모 너비 100% == 500px */
+  height: 50%; /* 부모 높이 50% == 300px */
+}
+
+.container-1 > div:first-child{
+  background-color: orange;
+}
+.container-1 > div:last-child{
+  background-color: pink;
+}
+
+
+/* 세로 방향 3분할 */
+.container-2{
+  width: 300px;
+  height: 432px;
+  margin: 20px;
+}
+
+/* 
+  div -> display : block; 
+  == 한 행을 모두 차지 
+  == width : 100%가 기본 값
+*/
+.container-2 > div:nth-child(1){
+  height: 50%;
+  background-color: red;
+}
+.container-2 > div:nth-child(2){
+  height: 30%;
+  background-color: green;
+}
+.container-2 > div:nth-child(3){
+  height: 20%;
+  background-color: blue;
+}
+
+/* 좌우 2분할 */
+.container-3{
+  width: 400px;
+  height: 200px;
+  margin: 20px;
+
+  /* 내부 요소(item)을 유연하게 배치, 정렬하겠다고 지정하는 속성 */
+  display: flex;
+
+  /* 중심축 방향을 row(왼쪽 -> 오른쪽) */
+  flex-direction: row; 
+}
+
+.container-3 > div{
+  width: 50%;
+  height: 100%;
+
+  /* display: inline-block; */
+
+  /* inline, inline-block : 글자 취급 
+    -> 띄어쓰기, 엔터가 중간에 포함되어
+    요소가 원하는대로 배치되지 않을 수 있다
+  */
+}
+
+
+.container-3 > div:first-child{
+  background-color: black;
+}
+
+.container-3 > div:last-child{
+  background-color: pink;
+}
+
+
+/* 가로 5분할 */
+.container-4{
+  width: 600px;
+  height: 100px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row; /* 기본 값이라서 안써도 무방 */
+}
+
+/* 홀수 번째 요소(1,3,5) */
+.container-4 > div:nth-child(2n + 1){
+  width: 10%;
+  background-color: lightblue;
+
+  height: 100%;
+}
+/* 짝수 번째 요소(2,4) */
+.container-4 > div:nth-child(2n){
+  width: 35%;
+  background-color: lightcoral;
+
+  align-items : stretch; /* 교차축 정렬 기본값 == height : 100% */
+}
+
+
+/* 田 모양 만들기 */
+
+.container-5{
+  width: 500px;
+  height: 500px;
+  margin: 20px;
+}
+
+/* 행 분할 */
+.container-5 > .row{
+  width: 100%; /* div는 block 형식 요소 == width가 기본 100% */
+  height: 50%;
+
+  /* 내부 요소(item) 가로 배치 */
+  display: flex;
+  flex-direction: row; 
+  align-items: stretch; /* item이 교차축 방향을 꽉 채우도록 늘어남 */
+}
+
+/* 열 분할 */
+.container-5 .col{
+  width: 50%;
+  /* height: 100%; */
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13_flex4</title>
+  <link rel="stylesheet" href="../css/13_flex4.css">
+  <link rel="stylesheet" href="../css/bg-colors.css">
+</head>
+<body>
+  <h1>flex를 이용한 화면(영역) 분할</h1>
+
+  <h3>상하 2분할(flex 사용 안해도 가능)</h3>
+  <pre>
+    width : 500px;
+    height : 600px;
+    영역을 위/아래로 절반씩 나누기
+    -> display : block;  특징 활용
+  </pre>
+
+  <div class="container-1">
+    <div></div>
+    <div></div>
+  </div>
+
+
+  <hr>
+  <h3>세로 방향 3분할</h3>
+  <pre>
+    width : 300px;
+    height : 432px;
+    1행 : 2행 : 3행 = 50 : 30 : 20
+    (각 행의 배경색은 자유)
+  </pre>
+
+  <div class="container-2">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+    
+  <hr>
+  <h3>좌우 2분할</h3>
+  <pre>
+    width : 400px;
+    height : 200px;
+    좌우 절반씩 영역 분할
+  </pre>
+  
+  <div class="container-3">
+    <div></div>
+    <div></div> 
+  </div>
+
+
+  <hr>
+  <h3>가로 5분할</h3>
+  <pre>
+    width  : 600px;
+    height : 100px;
+
+    1,3,5 : 너비 10%
+    2,4   : 너비 35%
+  </pre>
+
+  <div class="container-4">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+
+  <hr>
+  <h3>田 모양 만들기</h3>
+
+  <div class="container-5">
+    <div class="row">
+      <div class="col bg-9"></div>
+      <div class="col bg-10"></div>
+    </div>
+    <div class="row">
+      <div class="col bg-1"></div>
+      <div class="col bg-7"></div>
+    </div>
+  </div>
+
+</body>
+</html>

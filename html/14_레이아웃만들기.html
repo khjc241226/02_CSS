@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14_레이아웃 만들기</title>
+  <link rel="stylesheet" href="../css/14_레이아웃만들기.css">
+  <link rel="stylesheet" href="../css/bg-colors.css">
+</head>
+<body>
+  <!-- 
+    * 시맨틱(semantic, 의미) 태그 
+
+     - 태그명만 보고도 어떤 용도인지 알 수 있게 
+       이름을 붙여놓은 태그
+  
+     - div와 역할은 똑같은데 이름만 다름!!!
+
+     - header, main, footer, nav, section, article, aside 등이 존재
+  -->
+
+  <!-- header : 화면/요소 상단 영역 -->
+  <header class="bg-1">
+    <section class="header-1 bg-3">왼쪽</section>
+    <section class="header-2 bg-4">가운데</section>
+    <section class="header-3 bg-1">오른쪽</section>
+  </header>
+
+  <!-- main : 주된 내용이 작성되는 영역 -->
+  <main>
+    <section class="content-1 bg-6"></section>
+
+    <section class="content-2 bg-10">
+      <div class="bg-11"></div>
+      <div class="bg-12"></div>
+    </section>
+  </main>
+
+  <!-- footer : 화면/요소 하단 영역 -->
+  <footer class="bg-2"></footer>
+  
+</body>
+</html>
